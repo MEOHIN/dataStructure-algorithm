@@ -38,20 +38,17 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-//        Scanner stdIn = new Scanner(System.in);
-//
-//        System.out.println("힙 정렬");
-//        System.out.print("요솟수: ");
-//        int nx = stdIn.nextInt();
-//        int[] x = new int[nx];
-//
-//        for (int i = 0; i < nx; i++) {
-//            System.out.print("x[" + i + "] :");
-//            x[i] = stdIn.nextInt();
-//        }
+        Scanner stdIn = new Scanner(System.in);
 
-        int nx = 7;
-        int[] x = new int[]{22, 5, 11, 32, 120, 68, 70};
+        System.out.println("힙 정렬");
+        System.out.print("요솟수: ");
+        int nx = stdIn.nextInt();
+        int[] x = new int[nx];
+
+        for (int i = 0; i < nx; i++) {
+            System.out.print("x[" + i + "] :");
+            x[i] = stdIn.nextInt();
+        }
 
         heapSort(x, nx);
 
