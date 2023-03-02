@@ -17,7 +17,7 @@ public class HeapSort {
         for (parent = left; parent < (right + 1) / 2; parent = child) {
             int cl = parent * 2 + 1;
             int cr = cl + 1;
-            child = (cl <= right && a[cr] > a[cl]) ? cr : cl;
+            child = (cr <= right && a[cr] > a[cl]) ? cr : cl;
             if (temp >= a[child]) {
                 break;
             }
