@@ -13,4 +13,8 @@ public class LinkedList<E> {
 
     private Node<E> head;           // 머리 노드
     private Node<E> crnt;           // 선택 노드
+
+    public LinkedList() {
+        head = crnt = null;
+    }
 }
