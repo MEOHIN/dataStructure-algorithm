@@ -42,11 +42,17 @@ public class LinkedList<E> {
         if (head == null) {                 // 리스트가 비어 있으면
             addFirst(obj);                  // 머리에 삽입
         } else {
-            Node<E> prt = head;
-            while (prt.next != null) {
-                prt = prt.next;
+            Node<E> ptr = head;
+            while (ptr.next != null) {
+                ptr = ptr.next;
             }
-            prt.next = crnt = new Node<E>(obj, null);
+            ptr.next = crnt = new Node<E>(obj, null);
+        }
+    }
+
+    public void removeFirst() {
+        if (head != null) {             // 리스트가 비어 있지 않으면
+            head = crnt = head.next;
         }
     }
 }
