@@ -120,4 +120,13 @@ public class LinkedList<E> {
             System.out.println(crnt.data);
         }
     }
+
+    public void dump() {
+        Node<E> ptr = head;
+
+        while (ptr != null) {
+            System.out.println(ptr.data);
+            ptr = ptr.next;
+        }
+    }
 }
