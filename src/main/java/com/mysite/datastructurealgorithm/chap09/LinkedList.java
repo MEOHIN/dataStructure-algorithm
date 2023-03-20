@@ -1,5 +1,7 @@
 package com.mysite.datastructurealgorithm.chap09;
 
+import java.util.Comparator;
+
 public class LinkedList<E> {
     class Node<E> {
         private E data;             // 데이터
@@ -16,5 +18,18 @@ public class LinkedList<E> {
 
     public LinkedList() {
         head = crnt = null;
+    }
+
+    public E search(E obj, Comparator<? super E> c) {
+        Node<E> ptr = head;                         // 현재 스캔 중인 노드
+
+        while (ptr != null) {
+            if (c.compare(obj, ptr.data) == 0) {    // 검색 성공
+                crnt = ptr;
+                return ptr.data;
+            }
+            ptr = ptr.next;                         // 다음 노드를 선택
+        }
+        return null;                                // 검색 실패
     }
 }
