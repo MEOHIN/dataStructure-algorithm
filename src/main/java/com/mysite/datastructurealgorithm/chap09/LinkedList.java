@@ -74,4 +74,23 @@ public class LinkedList<E> {
             }
         }
     }
+
+    public void remove(Node p) {
+        if (head != null) {
+            if (p == head) {            // p가 머리 노드면
+                removeFirst();          // 머리 노드를 삭제
+            } else {
+                Node<E> ptr = head;
+
+                while (ptr.next != p) {
+                    ptr = ptr.next;
+                    if (ptr == null) {
+                        return;         // p가 리스트에 없습니다.
+                    }
+                }
+                ptr.next = p.next;
+                crnt = ptr;
+            }
+        }
+    }
 }
