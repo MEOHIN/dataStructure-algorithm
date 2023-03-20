@@ -97,4 +97,11 @@ public class LinkedList<E> {
     public void removeCurrentNode() {
         remove(crnt);
     }
+
+    public void clear() {
+        while (head != null) {      // 노드에 아무것도 없을때까지
+            removeFirst();          // 머리 노드를 삭제
+        }
+        crnt = null;
+    }
 }
