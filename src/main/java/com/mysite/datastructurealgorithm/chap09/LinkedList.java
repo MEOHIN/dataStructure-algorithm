@@ -112,4 +112,12 @@ public class LinkedList<E> {
         crnt = crnt.next;
         return true;
     }
+
+    public void printCurrentNode() {
+        if (crnt == null) {
+            System.out.println("선택한 노드가 없습니다.");
+        } else {
+            System.out.println(crnt.data);
+        }
+    }
 }
