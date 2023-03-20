@@ -104,4 +104,12 @@ public class LinkedList<E> {
         }
         crnt = null;
     }
+
+    public boolean next() {
+        if (crnt == null || crnt.next == null) {
+            return false;           // 이동할 수 없음
+        }
+        crnt = crnt.next;
+        return true;
+    }
 }
