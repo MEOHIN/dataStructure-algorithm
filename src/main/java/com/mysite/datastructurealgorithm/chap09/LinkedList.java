@@ -93,4 +93,8 @@ public class LinkedList<E> {
             }
         }
     }
+
+    public void removeCurrentNode() {
+        remove(crnt);
+    }
 }
