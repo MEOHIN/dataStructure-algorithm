@@ -32,4 +32,9 @@ public class LinkedList<E> {
         }
         return null;                                // 검색 실패
     }
+
+    public void addFirst(E obj) {
+        Node<E> ptr = head;                     //삽입 전의 머리 노드
+        head = crnt = new Node<E>(obj, ptr);
+    }
 }
