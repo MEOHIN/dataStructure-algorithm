@@ -34,7 +34,19 @@ public class LinkedList<E> {
     }
 
     public void addFirst(E obj) {
-        Node<E> ptr = head;                     //삽입 전의 머리 노드
+        Node<E> ptr = head;                 //삽입 전의 머리 노드
         head = crnt = new Node<E>(obj, ptr);
+    }
+
+    public void addLast(E obj) {
+        if (head == null) {                 // 리스트가 비어 있으면
+            addFirst(obj);                  // 머리에 삽입
+        } else {
+            Node<E> prt = head;
+            while (prt.next != null) {
+                prt = prt.next;
+            }
+            prt.next = crnt = new Node<E>(obj, null);
+        }
     }
 }
