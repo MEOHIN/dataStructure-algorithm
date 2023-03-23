@@ -79,7 +79,7 @@ public class ArrayLinkedList<E> {
     }
 
     // 머리에 노드를 삽입
-    public void addFist(E obj) {
+    public void addFirst(E obj) {
         int ptr = head;                 // 삽입 전의 머리 노드
         int rec = getInsertIndex();
         if (rec != NULL) {
@@ -91,7 +91,7 @@ public class ArrayLinkedList<E> {
     // 꼬리에 노드를 삽입
     public void addLast(E obj) {
         if (head == NULL) {             // 리스트가 비어 있으면
-            addFist(obj);               // 머리에 삽입
+            addFirst(obj);               // 머리에 삽입
         } else {
             int ptr = head;
             while (n[ptr].next != NULL) {
