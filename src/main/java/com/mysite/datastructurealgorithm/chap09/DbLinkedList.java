@@ -112,4 +112,10 @@ public class DbLinkedList<E> {
         return true;
     }
 
+    // 선택 노드의 바로 뒤에 노드를 삽입하는 메서드
+    public void add(E obj) {
+        Node<E> node = new Node<E>(obj, crnt, crnt.next);
+        crnt.next = crnt.next.prev = node;
+        crnt = node;
+    }
 }
