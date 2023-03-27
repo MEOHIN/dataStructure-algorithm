@@ -1,5 +1,7 @@
 package com.mysite.datastructurealgorithm.chap09;
 
+import java.util.Comparator;
+
 /* 원형 이중 연결 리스트 클래스
 필드 2개를 갖는다.
 필드: head, crnt
@@ -52,5 +54,24 @@ public class DbLinkedList<E> {
      */
     public boolean isEmpty() {
         return head.next == head;
+    }
+
+    /* 노드를 연결 검색하는 메서드
+    머리 노드부터 뒤쪽 포인터를 차례로 스캔한다.
+    실질적인 머리 노드가 더미 노드의 다음 노드이므로 검색의 시작은 head가 아니라 head.next다.
+     */
+    public E search(E obj, Comparator<? super E> c) {
+        Node<E> ptr = head.next;        // 현재 스캔 중인 노드
+
+        // ptr이 주목하고 있는 것이 꼬리 노드일 때 ptr이 가리키는 곳이 더미 노드가 된다.
+        // 더미 노드는 head다.
+        while (ptr != head) {
+            if (c.compare(obj, ptr.data) == 0) {
+                crnt = ptr;
+                return ptr.data;        // 검색 성공
+            }
+            ptr = ptr.next;             // 다음 노드로 선택
+        }
+        return null;                    // 검색 실패
     }
 }
