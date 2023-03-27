@@ -125,7 +125,7 @@ public class DbLinkedListTester {
                 case ADD_LAST:
                     data = new Data();
                     data.scanData("꼬리에 삽입", Data.NO | Data.NAME);
-                    list.addFirst(data);
+                    list.addLast(data);
                     break;
 
                 case ADD:
