@@ -168,4 +168,11 @@ public class DbLinkedList<E> {
         crnt = head.prev;
         removeCurrentNode();
     }
+
+    // 모든 노드를 삭제하는 메서드
+    public void clear() {
+        while (!isEmpty()) {
+            removeFirst();
+        }
+    }
 }
