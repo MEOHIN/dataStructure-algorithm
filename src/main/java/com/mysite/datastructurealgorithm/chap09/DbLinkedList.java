@@ -124,4 +124,10 @@ public class DbLinkedList<E> {
         crnt = head;
         add(obj);
     }
+
+    // 꼬리에 노드를 삽입하는 메서드
+    public void addLast(E obj) {
+        crnt = head.prev;
+        add(obj);
+    }
 }
