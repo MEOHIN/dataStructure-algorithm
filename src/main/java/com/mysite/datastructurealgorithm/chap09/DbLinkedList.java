@@ -46,4 +46,11 @@ public class DbLinkedList<E> {
     public DbLinkedList() {
         head = crnt = new Node<E>();
     }
+
+    /* 리스트가 비어 있는 지(더미 노드만 있는지) 확인하는 메서드
+    더미 노드의 뒤쪽 포인터 head.next가 더미 노드인 head를 가리키면 리스트는 비어 있는 것이다.
+     */
+    public boolean isEmpty() {
+        return head.next == head;
+    }
 }
