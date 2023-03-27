@@ -156,4 +156,10 @@ public class DbLinkedList<E> {
             ptr = ptr.next;
         }
     }
+
+    // 머리 노드를 삭제하는 메서드
+    public void removeFirst() {
+        crnt = head.next;
+        removeCurrentNode();
+    }
 }
