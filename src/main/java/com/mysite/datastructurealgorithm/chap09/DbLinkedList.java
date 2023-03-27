@@ -103,4 +103,13 @@ public class DbLinkedList<E> {
         return true;
     }
 
+    // 선택 노드를 하나 앞쪽으로 이동하는 메서드
+    public boolean prev() {
+        if (isEmpty() || crnt.prev == head) {
+            return false;                   // 이동할 수 없음
+        }
+        crnt = crnt.prev;
+        return true;
+    }
+
 }
