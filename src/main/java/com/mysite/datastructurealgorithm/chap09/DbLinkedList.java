@@ -130,4 +130,16 @@ public class DbLinkedList<E> {
         crnt = head.prev;
         add(obj);
     }
+
+    // 선택 노드를 삭제하는 메서드
+    public void removeCurrentNode() {
+        if (!isEmpty()) {
+            crnt.prev.next = crnt.next;
+            crnt.next.prev = crnt.prev;
+            crnt = crnt.prev;
+            if (crnt == head) {
+                crnt = head.next;
+            }
+        }
+    }
 }
