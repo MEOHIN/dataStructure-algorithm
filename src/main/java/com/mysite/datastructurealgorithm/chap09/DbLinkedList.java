@@ -118,4 +118,10 @@ public class DbLinkedList<E> {
         crnt.next = crnt.next.prev = node;
         crnt = node;
     }
+
+    // 머리에 노드를 삽입하는 메서드
+    public void addFirst(E obj) {
+        crnt = head;
+        add(obj);
+    }
 }
