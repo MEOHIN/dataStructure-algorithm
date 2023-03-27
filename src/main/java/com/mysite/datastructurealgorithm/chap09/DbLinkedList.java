@@ -83,4 +83,15 @@ public class DbLinkedList<E> {
             System.out.println(crnt.data);
         }
     }
+
+    // 모든 노드를 출력하는 메서드
+    public void dump() {
+        Node<E> ptr = head.next;
+
+        while (ptr != head) {
+            System.out.println(ptr.data);
+            ptr = ptr.next;
+        }
+    }
+
 }
