@@ -142,4 +142,18 @@ public class DbLinkedList<E> {
             }
         }
     }
+
+    // 임의의 노드를 삭제하는 메서드
+    public void remove(Node p) {
+        Node<E> ptr = head.next;
+
+        while (ptr != head) {
+            if (ptr == p) {
+                crnt = p;
+                removeCurrentNode();
+                break;
+            }
+            ptr = ptr.next;
+        }
+    }
 }
