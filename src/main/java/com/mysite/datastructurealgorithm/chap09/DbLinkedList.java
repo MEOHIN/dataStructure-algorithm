@@ -162,4 +162,10 @@ public class DbLinkedList<E> {
         crnt = head.next;
         removeCurrentNode();
     }
+
+    // 꼬리 노드를 삭제하는 메서드
+    public void removeLast() {
+        crnt = head.prev;
+        removeCurrentNode();
+    }
 }
