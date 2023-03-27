@@ -74,4 +74,13 @@ public class DbLinkedList<E> {
         }
         return null;                    // 검색 실패
     }
+
+    // 선택 노드를 출력하는 메서드
+    public void printCurrentNode() {
+        if (isEmpty()) {
+            System.out.println("선택 노드가 없습니다.");
+        } else {
+            System.out.println(crnt.data);
+        }
+    }
 }
