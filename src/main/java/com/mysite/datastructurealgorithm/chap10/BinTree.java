@@ -47,4 +47,8 @@ public class BinTree<K ,V> {
         this();         // 인수를 전달받지 않은 생성자 BinTree()를 호출한다. root가 null인 이진검색트리를 생성한다.
         comparator = c; // 필드 comparator에 전달받은 c를 설정한다.
     }
+
+    private int comp(K key1, K key2) {
+        return (comparator == null) ? ((Comparable<K>)key1).compareTo(key2) : comparator.compare(key1, key2);
+    }
 }
