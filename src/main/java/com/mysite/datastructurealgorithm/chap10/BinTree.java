@@ -156,4 +156,18 @@ public class BinTree<K ,V> {
         }
         return true;
     }
+
+    // node를 루트로 하는 서브 트리의 노드를 키 값의 오름 차순으로 출력
+    private void printSubTree(Node node) {
+        if (node != null) {
+            printSubTree(node.left);    // 왼쪽 서브 트리를 키 값의 오름차순으로 출력
+            System.out.println(node.key + " " + node.data); // node를 출력
+            printSubTree(node.right);   // 오른쪽 서브 트리를 키 값의 오름차순으로 출력
+        }
+    }
+
+    // 모든 노드를 키 값의 오름차순으로 출력
+    public void print() {
+        printSubTree(root);
+    }
 }
