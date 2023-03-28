@@ -51,4 +51,22 @@ public class BinTree<K ,V> {
     private int comp(K key1, K key2) {
         return (comparator == null) ? ((Comparable<K>)key1).compareTo(key2) : comparator.compare(key1, key2);
     }
+
+    public V search(K key) {
+        Node<K, V> p = root;                    // 루트에 주목
+        
+        while (true) {
+            if (p == null) {                    // 더 이상 진행하지 않으면
+                return null;                    // 검색 실패
+            }
+            int cond = comp(key, p.getKey());   // key와 노드 p의 키를 비교
+            if (cond == 0) {                    // 같으면
+                return p.getValue();            // 검색 성공
+            } else if (con < 0) {               // key 쪽이 작으면
+                p = p.left;                     // 왼쪽 서브 트리에서 검색
+            } else {                            // key 쪽이 크면
+                p = p.right;                    // 오른쪽 서브 트리에서 검색
+            }
+        }
+    }
 }
