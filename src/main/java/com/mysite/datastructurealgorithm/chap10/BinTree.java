@@ -69,4 +69,31 @@ public class BinTree<K ,V> {
             }
         }
     }
+
+    private void addNode(Node<K, V> node, K key, V data) {
+        int cond = comp(key, node.getKey());
+        if (cond == 0) {
+            return;                              // key가 이진검색트리에 이미 있음
+        } else if (cond < 0) {
+            if (node.left == null) {
+                node.left = new Node<K, V>(key, data, null, null);
+            } else {
+                addNode(node.left, key, data);  // 왼쪽 서브 트리에 주목
+            }
+        } else {
+            if (node.right == null) {
+                node.right = new Node<K, V>(key, data, null, null);
+            } else {
+                addNode(node.right, key, data); // 오른쪽 서브 트리에 주목
+            }
+        }
+    }
+
+    public void add(K key, V data) {
+        if (root == null) {
+            root = new Node<K, V>(key, data, null, null);
+        } else {
+            addNode(root, key, data);
+        }
+    }
 }
