@@ -28,4 +28,23 @@ public class BinTree<K ,V> {
             System.out.println(data);
         }
     }
+
+    private Node<K, V> root;
+    private Comparator<? super K> comparator = null;
+
+    /* 노드가 하나도 없는(비어 있는) 이진검색트리를 생성한다.
+    이 생성자로 생성한 이진검색트리에서는 자연 순서에 따라 키 값을 비교하고 대소 관계를 판단한다.
+     */
+    public BinTree() {
+        root = null;
+        // 비교자를 설정하지 않으므로 comparator의 값은 null이 된다.
+    }
+
+    /* 인수로 비교자를 전달받는 생성자다.
+    이 생성자로 생성한 이진검색트리에서는 노드의 대소 관계를 판단할 때 전달받은 비교자에 의해 수행한다.
+     */
+    public BinTree(Comparator<? super K> c) {
+        this();         // 인수를 전달받지 않은 생성자 BinTree()를 호출한다. root가 null인 이진검색트리를 생성한다.
+        comparator = c; // 필드 comparator에 전달받은 c를 설정한다.
+    }
 }
