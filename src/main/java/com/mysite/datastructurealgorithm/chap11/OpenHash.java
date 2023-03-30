@@ -60,4 +60,18 @@ public class OpenHash<K, V> {
     public int rehashValue(int hash) {
         return (hash + 1) % size;
     }
+
+    private Bucket<K, V> searchNode(K key) {
+        int hash = hashValue(key);      // 검색할 데이터의 해시 값
+        Bucket<K, V> p = table[hash];   // 선택 버킷
+
+        for (int i = 0; p.stat != Status.EMPTY && i < size; i++) {
+            if (p.stat == Status.OCCUPIED && p.getKey().equals(key)) {
+                return p;
+            }
+            hash = rehashValue(hash);   // 재해시
+            p = table[hash];
+        }
+        return null;
+    }
 }
