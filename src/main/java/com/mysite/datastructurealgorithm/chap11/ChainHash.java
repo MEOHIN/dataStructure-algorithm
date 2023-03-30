@@ -42,4 +42,17 @@ public class ChainHash<K, V> {
     public int hashValue(Object key) {
         return key.hashCode() % size;
     }
+
+    public V search(K key) {
+        int hash = hashValue(key);      // 검색할 데이터의 해시 값
+        Node<K, V> p = table[hash];     // 선택 노드
+
+        while (p != null) {
+            if (p.getKey().equals(key)) {
+                return p.getValue();    // 검색 성공
+            }
+            p = p.next;                 // 다음 노드에 주목
+        }
+        return null;                    // 검색 실패
+    }
 }
