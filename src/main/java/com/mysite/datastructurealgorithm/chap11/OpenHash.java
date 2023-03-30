@@ -56,4 +56,8 @@ public class OpenHash<K, V> {
     public int hashValue(Object key) {
         return key.hashCode() % size;
     }
+
+    public int rehashValue(int hash) {
+        return (hash + 1) % size;
+    }
 }
