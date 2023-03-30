@@ -52,4 +52,8 @@ public class OpenHash<K, V> {
             this.size = 0;
         }
     }
+
+    public int hashValue(Object key) {
+        return key.hashCode() % size;
+    }
 }
