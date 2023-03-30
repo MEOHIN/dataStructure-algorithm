@@ -29,7 +29,7 @@ public class ChainHash<K, V> {
     private int size;
     private Node<K, V>[] table;
 
-    ChainHash(int capacity) {
+    public ChainHash(int capacity) {
         try {
             table = new Node[capacity];
             this.size = capacity;
