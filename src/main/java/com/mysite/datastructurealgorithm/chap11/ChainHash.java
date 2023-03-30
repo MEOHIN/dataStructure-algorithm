@@ -37,4 +37,9 @@ public class ChainHash<K, V> {
             this.size = 0;
         }
     }
+
+    // 해시 값을 구한다.
+    public int hashValue(Object key) {
+        return key.hashCode() % size;
+    }
 }
