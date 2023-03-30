@@ -101,4 +101,14 @@ public class OpenHash<K, V> {
         }
         return 2;
     }
+
+    public int remove(K key) {
+        Bucket<K, V> p = searchNode(key);// 선택 버킷
+        if (p == null) {
+            return 1;                   // 이 키 값은 등록되지 않음
+        }
+
+        p.setStat(Status.DELETED);
+        return 0;
+    }
 }
