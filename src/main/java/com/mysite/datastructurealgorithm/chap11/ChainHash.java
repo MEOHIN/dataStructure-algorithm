@@ -69,6 +69,5 @@ public class ChainHash<K, V> {
         Node<K, V> tmep = new Node<K, V>(key, data, table[hash]);
         table[hash] = tmep;                 // 노드를 삽입
         return 0;
-        }
     }
 }
