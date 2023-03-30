@@ -74,4 +74,13 @@ public class OpenHash<K, V> {
         }
         return null;
     }
+
+    public V search(K key) {
+        Bucket<K, V> p = searchNode(key);
+        if (p != null) {
+            return p.getValue();
+        } else {
+            return null;
+        }
+    }
 }
