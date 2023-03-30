@@ -37,4 +37,19 @@ public class OpenHash<K, V> {
             return key.hashCode();
         }
     }
+
+    private int size;
+    private Bucket<K, V>[] table;
+
+    public OpenHash(int size) {
+        try {
+            table = new Bucket[size];
+            for (int i = 0; i < size; i++) {
+                table[i] = new Bucket<K, V>();
+            }
+            this.size = size;
+        } catch (OutOfMemoryError e) {
+            this.size = 0;
+        }
+    }
 }
