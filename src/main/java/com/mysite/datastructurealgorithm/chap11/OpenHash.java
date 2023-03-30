@@ -83,4 +83,22 @@ public class OpenHash<K, V> {
             return null;
         }
     }
+
+    public int add(K key, V data) {
+        if (search(key) != null) {
+            return 1;                   // 이 키 값은 이미 등록됨
+        }
+
+        int hash = hashValue(key);      // 추가할 데이터의 해시 값
+        Bucket<K, V> p = table[hash];   // 선택 버킷
+        for (int i = 0; i < size; i++) {
+            if (p.stat == Status.EMPTY || p.stat == Status.DELETED) {
+                p.set(key, data, Status.OCCUPIED);
+                return 0;
+            }
+            hash = rehashValue(hash);   // 재해시
+            p = table[hash];
+        }
+        return 2;
+    }
 }
