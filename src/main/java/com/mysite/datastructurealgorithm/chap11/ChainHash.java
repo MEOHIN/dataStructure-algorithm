@@ -71,7 +71,7 @@ public class ChainHash<K, V> {
         return 0;
     }
 
-    public int remove(K key, V data) {
+    public int remove(K key) {
         int hash = hashValue(key);          // 삭제할 제이터의 해시 값
         Node<K, V>  p = table[hash];        // 선택 노드
         Node<K, V>  pp = null;              // 바로 앞의 선택 노드
